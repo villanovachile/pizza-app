@@ -1,4 +1,5 @@
 import React from 'react';
+import Selection from './Selection.js';
 
 function Toppings() {
     return(
@@ -33,7 +34,7 @@ function Toppings() {
          </p>
 
         </>
-    )
+    );
 }
 
 export default Toppings;
