@@ -8,7 +8,9 @@ import Order from './Order.js';
 
 {/*Testing*/}
 
-function App() {
+
+
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +18,7 @@ function App() {
       </header>
     <div className="container">
       <div className="column">
-        <Selection>
+        <Selection data={props.data}>
         {/*Renders order options on the left side of the page*/}
         </Selection>
       </div>

@@ -4,13 +4,13 @@ import Crust from './Crust.js';
 import Toppings from './Toppings.js';
 import index from '../index.css';
 
-function Selection(){
+function Selection(props){
     return(
         <div className="orderItems" >
             <h1>Here's Your Order!</h1>
-            <PizzaSize />
-            <Crust />
-            <Toppings />
+            <PizzaSize data={ props.data.pizzaSize } />
+            <Crust data={ props.data.crustStyle } />
+            <Toppings data={ props.data.toppings } />
         </div>
     );
 }
