@@ -4,10 +4,20 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+const pizzaSize = ['Small', 'Medium', 'Large'];
+const crustStyle = ['Original', 'Garlic-Butter', 'Cheese-Stuffed'];
+const toppings = ['Sauce', 'Pepperoni', 'Onion', 'Sausage', 'Pineapple'];
+
+const pizzaData ={pizzaSize, crustStyle, toppings};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App 
+      data={ pizzaData }
+        
+      />
+
   </React.StrictMode>
 );
 
