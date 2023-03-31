@@ -1,41 +1,87 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.App-header h1 {
-  text-align: center;
-}
-
-.container {
+header {
+  min-height: 50px;
+  /* border: 2px solid black;
+  border-bottom: 0px; */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.column {
-  flex: 1;
-  padding: 20px;
-  margin: 10px;
-  background-color: #D3D3D3;
-}
-
-.orderItems h1 {
+.pizza-app-container {
+  max-width: 500px;
+  min-width: 300px;
+  background: orange;
+  margin: auto;
   text-align: center;
 }
-
-.selectedItems h1 {
-  text-align: center;
+.pizza-size-container {
+  min-height: 50px;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.order h1 { 
-  text-align: center;
+.crust-options-container {
+  /* border-style: solid;
+  border-color: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-width: 0px 2px 2px 2px; */
+}
+
+h4 {
+  padding: 10px;
+  margin: 0px;
+}
+
+.toppings-container {
+  /* padding: 20px;
+  border-left: 2px solid black;
+  border-right: 2px solid black; */
+}
+
+.topping-items {
+  display: flex;
+  justify-content: start;
+}
+
+.topping-name {
+  margin: auto;
+  min-width: 50%;
+}
+
+.topping-selection {
+  margin: auto;
+  min-width: 50%;
+}
+
+.order-summary {
+  min-height: 50px;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  display: inline-block;
+  width: 6em;
+  position: relative;
+  top: -3em;
+}
+label {
+  display: inline-block;
+  width: 6em;
+  margin-right: 0.5em;
+  padding-top: 1.5em;
 }
