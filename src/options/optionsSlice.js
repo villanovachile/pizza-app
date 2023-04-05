@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
+  size: [
+    {name: "Small", value: true, id: 1},
+    {name: "Medium", value: false, id: 2},
+    {name: "Large", value: false, id: 3}
+  ],
   crust: [
     { name: "Original", value: true, id: 1 },
     { name: "Garlic Butter", value: false, id: 2 },
@@ -58,9 +64,17 @@ const optionsSlice = createSlice({
         crust.value = value;
       }
     },
+    updateSize: (state, action) => {
+      const { id, value } = action.payload;
+      const size = state.size.find((size) => size.id === id);
+
+      if(size){
+        size.value = value; 
+      }
+    },
   },
 });
 
-export const { updateTopping, updateCrust } = optionsSlice.actions;
+export const { updateTopping, updateCrust, updateSize } = optionsSlice.actions;
 
-export const { reducer, toppings, crust } = optionsSlice;
+export const { reducer, toppings, crust, size } = optionsSlice;
