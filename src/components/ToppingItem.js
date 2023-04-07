@@ -1,22 +1,13 @@
 const ToppingItem = ({
-  topping,
+  toppingName,
+  toppingId,
   selection,
   getToppingSelection,
   updateToppingSelection,
 }) => {
   return (
     <>
-      <div
-        className="topping-name"
-        onClick={(e) => {
-          console.log(topping, getToppingSelection(topping));
-        }}
-      >
-        {topping.replace(
-          /\b\w+/g,
-          (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-        )}
-      </div>
+      <div className="topping-name">{toppingName}</div>
       <div className="topping-selection">
         <svg
           viewBox="-2 -2 22 24"
@@ -24,8 +15,8 @@ const ToppingItem = ({
           width="30px"
           onClick={() => {
             selection !== "left"
-              ? updateToppingSelection(topping, "left")
-              : updateToppingSelection(topping, "none");
+              ? updateToppingSelection(toppingId, "left")
+              : updateToppingSelection(toppingId, "none");
           }}
         >
           <g transform="rotate(-90, 10, 10)">
@@ -44,8 +35,8 @@ const ToppingItem = ({
           width="30px"
           onClick={() => {
             selection !== "whole"
-              ? updateToppingSelection(topping, "whole")
-              : updateToppingSelection(topping, "none");
+              ? updateToppingSelection(toppingId, "whole")
+              : updateToppingSelection(toppingId, "none");
           }}
         >
           <g transform="rotate(-90, 10, 10)">
@@ -64,8 +55,8 @@ const ToppingItem = ({
           width="30px"
           onClick={() => {
             selection !== "right"
-              ? updateToppingSelection(topping, "right")
-              : updateToppingSelection(topping, "none");
+              ? updateToppingSelection(toppingId, "right")
+              : updateToppingSelection(toppingId, "none");
           }}
         >
           <g transform="rotate(90, 10, 10)">

@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   size: [
-    {name: "Small", value: true, id: 1},
-    {name: "Medium", value: false, id: 2},
-    {name: "Large", value: false, id: 3}
+    { name: "Small", value: true, id: 1 },
+    { name: "Medium", value: false, id: 2 },
+    { name: "Large", value: false, id: 3 },
   ],
   crust: [
     { name: "Original", value: true, id: 1 },
@@ -14,32 +13,39 @@ const initialState = {
   ],
   toppings: [
     {
-      name: "pepperoni",
+      name: "Pepperoni",
       selection: "none",
+      id: 1,
     },
     {
-      name: "onions",
+      name: "Onions",
       selection: "none",
+      id: 2,
     },
     {
-      name: "sausage",
+      name: "Sausage",
       selection: "none",
+      id: 3,
     },
     {
-      name: "pineapple",
+      name: "Pineapple",
       selection: "none",
+      id: 4,
     },
     {
-      name: "mushrooms",
+      name: "Mushrooms",
       selection: "none",
+      id: 5,
     },
     {
-      name: "green peppers",
+      name: "Green peppers",
       selection: "none",
+      id: 6,
     },
     {
-      name: "olives",
+      name: "Olives",
       selection: "none",
+      id: 7,
     },
   ],
 };
@@ -49,8 +55,8 @@ const optionsSlice = createSlice({
   initialState,
   reducers: {
     updateTopping: (state, action) => {
-      const { name, selection } = action.payload;
-      const topping = state.toppings.find((topping) => topping.name === name);
+      const { id, selection } = action.payload;
+      const topping = state.toppings.find((topping) => topping.id === id);
 
       if (topping) {
         topping.selection = selection;
@@ -68,8 +74,8 @@ const optionsSlice = createSlice({
       const { id, value } = action.payload;
       const size = state.size.find((size) => size.id === id);
 
-      if(size){
-        size.value = value; 
+      if (size) {
+        size.value = value;
       }
     },
   },

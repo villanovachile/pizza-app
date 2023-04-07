@@ -7,14 +7,12 @@ const Toppings = () => {
 
   const toppings = useSelector((state) => state.options.toppings);
 
-  const updateToppingSelection = (toppingName, selection) => {
-    dispatch(updateTopping({ name: toppingName, selection: selection }));
+  const updateToppingSelection = (toppingId, selection) => {
+    dispatch(updateTopping({ id: toppingId, selection: selection }));
   };
 
-  //   updateToppingSelection("pepperoni", "right");
-
-  const getToppingSelection = (toppingName) => {
-    const topping = toppings.find((t) => t.name === toppingName);
+  const getToppingSelection = (toppingId) => {
+    const topping = toppings.find((t) => t.id === toppingId);
     if (topping) {
       return topping.selection;
     } else {
@@ -22,14 +20,13 @@ const Toppings = () => {
     }
   };
 
-  //   console.log("Pepperoni selection:", getToppingSelection("pepperoni"));
-
   return (
     <div className="toppings-container">
       {toppings.map((topping) => (
         <div className="topping-items" key={topping.name}>
           <ToppingItem
-            topping={topping.name}
+            toppingName={topping.name}
+            toppingId={topping.id}
             selection={topping.selection}
             getToppingSelection={getToppingSelection}
             updateToppingSelection={updateToppingSelection}
