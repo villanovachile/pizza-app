@@ -1,5 +1,20 @@
+import { useSelector } from "react-redux";
+
 const OrderSummary = () => {
-  return <div className="order-summary">Order Total: $20</div>;
+  
+  const order = useSelector((state) => state.options);
+
+
+  const summary = () => {
+    console.log(order);
+  }
+
+
+  
+  return <div className="order-summary">
+
+    <button onClick={() => summary()}>OUTPUT ORDER</button>
+  </div>;
 };
 
 export default OrderSummary;
