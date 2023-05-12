@@ -1,4 +1,4 @@
-import { updateTopping } from "../options/optionsSlice";
+import { updateTopping } from "../state/ordersSlice";
 import { useSelector, useDispatch } from "react-redux";
 import ToppingItem from "./ToppingItem";
 
@@ -6,18 +6,10 @@ const Toppings = () => {
   const dispatch = useDispatch();
 
   const toppings = useSelector((state) => state.options.toppings);
+  const toppingSelections = useSelector((state) => state.orders[0].toppings);
 
   const updateToppingSelection = (toppingId, selection) => {
-    dispatch(updateTopping({ id: toppingId, selection: selection }));
-  };
-
-  const getToppingSelection = (toppingId) => {
-    const topping = toppings.find((t) => t.id === toppingId);
-    if (topping) {
-      return topping.selection;
-    } else {
-      return null;
-    }
+    dispatch(updateTopping({ toppingIds: [toppingId], selection: selection }));
   };
 
   return (
@@ -27,8 +19,7 @@ const Toppings = () => {
           <ToppingItem
             toppingName={topping.name}
             toppingId={topping.id}
-            selection={topping.selection}
-            getToppingSelection={getToppingSelection}
+            selection={toppingSelections[topping.id]}
             updateToppingSelection={updateToppingSelection}
           />
         </div>

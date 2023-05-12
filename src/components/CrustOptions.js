@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateCrust } from "../options/optionsSlice";
+import { updateCrust } from "../state/optionsSlice";
 
 const CrustOptions = () => {
   const dispatch = useDispatch();
