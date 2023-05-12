@@ -6,7 +6,7 @@ const Toppings = () => {
   const dispatch = useDispatch();
 
   const toppings = useSelector((state) => state.options.toppings);
-  const toppingSelections = useSelector((state) => state.orders[0].toppings);
+  const toppingSelections = useSelector((state) => state.orders[0].pizza.toppings);
 
   const updateToppingSelection = (toppingId, selection) => {
     dispatch(updateTopping({ toppingIds: [toppingId], selection: selection }));

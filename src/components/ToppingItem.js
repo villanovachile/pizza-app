@@ -2,7 +2,6 @@ const ToppingItem = ({
   toppingName,
   toppingId,
   selection,
-  getToppingSelection,
   updateToppingSelection,
 }) => {
   return (

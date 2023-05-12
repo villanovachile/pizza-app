@@ -5,9 +5,11 @@ import { v4 as uuid } from 'uuid';
 const initialState = [
   {
     uuid: uuid(),
-    size: null,
-    crust: 1,
-    toppings: {},
+    pizza: {
+      size: null,
+      crust: 1,
+      toppings: {},
+    },
   }
 ];
 
@@ -23,16 +25,16 @@ const ordersSlice = createSlice({
         newSelections[toppingid] = selection;
       });
 
-      state[0].toppings = {
-        ...state[0].toppings,
+      state[0].pizza.toppings = {
+        ...state[0].pizza.toppings,
         ...newSelections
       }
     },
     updateCrust: (state, action) => {
-      state.crust = action.payload.crustId;
+      state[0].pizza.crust = action.payload.crustId;
     },
     updateSize: (state, action) => {
-      state.size = action.payload.sizeId;
+      state[0].pizza.size = action.payload.sizeId;
     },
   },
 });
