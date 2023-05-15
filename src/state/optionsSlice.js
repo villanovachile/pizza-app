@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuid } from 'uuid';
 
 
 const initialState = {
@@ -16,37 +15,30 @@ const initialState = {
   toppings: [
     {
       name: "Pepperoni",
-      selection: "none",
       id: 1,
     },
     {
       name: "Onions",
-      selection: "none",
       id: 2,
     },
     {
       name: "Sausage",
-      selection: "none",
       id: 3,
     },
     {
       name: "Pineapple",
-      selection: "none",
       id: 4,
     },
     {
       name: "Mushrooms",
-      selection: "none",
       id: 5,
     },
     {
       name: "Green peppers",
-      selection: "none",
       id: 6,
     },
     {
       name: "Olives",
-      selection: "none",
       id: 7,
     },
   ],
@@ -56,13 +48,12 @@ const initialState = {
     },
     {
       size: {
-      small: 10,
-      medium: 13,
-      large: 16
+        small: 10,
+        medium: 13,
+        large: 16
       }
     }
   ],
-  uuid: uuid(),
 };
 
 const optionsSlice = createSlice({
@@ -70,28 +61,10 @@ const optionsSlice = createSlice({
   initialState,
   reducers: {
     updateTopping: (state, action) => {
-      const { id, selection } = action.payload;
-      const topping = state.toppings.find((topping) => topping.id === id);
-
-      if (topping) {
-        topping.selection = selection;
-      }
     },
     updateCrust: (state, action) => {
-      const { id, value } = action.payload;
-      const crust = state.crust.find((crust) => crust.id === id);
-
-      if (crust) {
-        crust.value = value;
-      }
     },
     updateSize: (state, action) => {
-      const { id, value } = action.payload;
-      const size = state.size.find((size) => size.id === id);
-
-      if (size) {
-        size.value = value;
-      }
     },
   },
 });

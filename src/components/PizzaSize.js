@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateSize } from "../options/optionsSlice";
+import { updateSize } from "../state/optionsSlice";
 
 
 const PizzaSize = () => {
@@ -13,7 +13,7 @@ const PizzaSize = () => {
 
   const handlePizzaSizeChange = (e) => {
     const sizeId = parseInt(e.target.value);
-   size.map((size) =>
+    size.map((size) =>
       size.id === sizeId
         ? updatePizzaSizeSelection(size.id, true)
         : updatePizzaSizeSelection(size.id, false)
