@@ -8,9 +8,9 @@ const initialState = {
     { name: "Large", value: false, id: 3 },
   ],
   crusts: [
-    { name: "Original", value: true, id: 4 },
-    { name: "Garlic Butter", value: false, id: 5 },
-    { name: "Stuffed Crust", value: false, id: 6 },
+    { name: "Original", id: 4 },
+    { name: "Garlic Butter", id: 5 },
+    { name: "Stuffed Crust", id: 6 },
   ],
   toppings: [
     {
