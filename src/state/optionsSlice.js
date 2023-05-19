@@ -7,39 +7,39 @@ const initialState = {
     { name: "Medium", value: false, id: 2 },
     { name: "Large", value: false, id: 3 },
   ],
-  crust: [
-    { name: "Original", value: true, id: 1 },
-    { name: "Garlic Butter", value: false, id: 2 },
-    { name: "Stuffed Crust", value: false, id: 3 },
+  crusts: [
+    { name: "Original", value: true, id: 4 },
+    { name: "Garlic Butter", value: false, id: 5 },
+    { name: "Stuffed Crust", value: false, id: 6 },
   ],
   toppings: [
     {
       name: "Pepperoni",
-      id: 1,
+      id: 7,
     },
     {
       name: "Onions",
-      id: 2,
+      id: 8,
     },
     {
       name: "Sausage",
-      id: 3,
+      id: 9,
     },
     {
       name: "Pineapple",
-      id: 4,
+      id: 10,
     },
     {
       name: "Mushrooms",
-      id: 5,
+      id: 11,
     },
     {
       name: "Green peppers",
-      id: 6,
+      id: 12,
     },
     {
       name: "Olives",
-      id: 7,
+      id: 13,
     },
   ],
   price: [
