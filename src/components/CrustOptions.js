@@ -1,22 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateCrust } from "../state/optionsSlice";
+import { updateCrust } from "../state/ordersSlice";
 
 const CrustOptions = () => {
   const dispatch = useDispatch();
 
-  const crust = useSelector((state) => state.options.crust);
+  const crusts = useSelector((state) => state.options.crusts);
+  const crustSelection = useSelector((state) => state.orders[0].pizza.crust);
 
-  const updateCrustSelection = (crustId, value) => {
-    dispatch(updateCrust({ id: crustId, value: value }));
-  };
+  const updateCrustSelection = (crustId) => dispatch(updateCrust({ crustId }));
 
   const handleCrustChange = (e) => {
     const crustId = parseInt(e.target.value);
-    crust.map((crust) =>
-      crust.id === crustId
-        ? updateCrustSelection(crust.id, true)
-        : updateCrustSelection(crust.id, false)
-    );
+    updateCrustSelection(crustId);
   };
 
   return (
@@ -24,17 +19,15 @@ const CrustOptions = () => {
       <h4>Crust options:</h4>
 
       <div className="crust-options">
-        {crust.map((crust) => (
+        {crusts.map((crust) => (
           <label key={crust.id}>
             {crust.name}
             <input
               type="radio"
               name="pizzaCrustChoice"
               value={crust.id}
-              checked={crust.value}
-              onChange={(e) => {
-                handleCrustChange(e);
-              }}
+              checked={crust.id === crustSelection}
+              onChange={handleCrustChange}
             />
           </label>
         ))}

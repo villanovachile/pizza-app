@@ -1,9 +1,18 @@
+import { useDispatch } from "react-redux";
+import { removeTopping } from "../state/ordersSlice";
+
 const ToppingItem = ({
   toppingName,
   toppingId,
   selection,
   updateToppingSelection,
 }) => {
+  const dispatch = useDispatch();
+
+  const removeToppingSelection = (toppingId) => {
+    dispatch(removeTopping({ toppingIds: [toppingId] }));
+  };
+
   return (
     <>
       <div className="topping-name">{toppingName}</div>
@@ -15,7 +24,7 @@ const ToppingItem = ({
           onClick={() => {
             selection !== "left"
               ? updateToppingSelection(toppingId, "left")
-              : updateToppingSelection(toppingId, "none");
+              : removeToppingSelection(toppingId);
           }}
         >
           <g transform="rotate(-90, 10, 10)">
@@ -35,7 +44,7 @@ const ToppingItem = ({
           onClick={() => {
             selection !== "whole"
               ? updateToppingSelection(toppingId, "whole")
-              : updateToppingSelection(toppingId, "none");
+              : removeToppingSelection(toppingId);
           }}
         >
           <g transform="rotate(-90, 10, 10)">
@@ -55,7 +64,7 @@ const ToppingItem = ({
           onClick={() => {
             selection !== "right"
               ? updateToppingSelection(toppingId, "right")
-              : updateToppingSelection(toppingId, "none");
+              : removeToppingSelection(toppingId);
           }}
         >
           <g transform="rotate(90, 10, 10)">

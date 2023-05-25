@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from 'uuid';
 
-
 const initialState = [
   {
     uuid: uuid(),
     pizza: {
       size: null,
-      crust: 1,
+      crust: 4,
       toppings: {},
     },
   }
@@ -21,8 +20,8 @@ const ordersSlice = createSlice({
       const { selection, toppingIds } = action.payload;
       const newSelections = {};
 
-      toppingIds.forEach(toppingid => {
-        newSelections[toppingid] = selection;
+      toppingIds.forEach(toppingId => {
+        newSelections[toppingId] = selection;
       });
 
       state[0].pizza.toppings = {
@@ -36,9 +35,16 @@ const ordersSlice = createSlice({
     updateSize: (state, action) => {
       state[0].pizza.size = action.payload.sizeId;
     },
+    removeTopping: (state, action) => {
+      const { toppingIds } = action.payload;
+
+      toppingIds.forEach(toppingId => {
+        delete state[0].pizza.toppings[toppingId]
+      });
+    }
   },
 });
 
-export const { updateTopping, updateCrust, updateSize } = ordersSlice.actions;
+export const { updateTopping, updateCrust, updateSize, removeTopping } = ordersSlice.actions;
 
 export const { reducer, toppings, crust, size } = ordersSlice;
