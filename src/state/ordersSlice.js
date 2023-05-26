@@ -5,7 +5,7 @@ const initialState = [
   {
     uuid: uuid(),
     pizza: {
-      size: null,
+      size: 1,
       crust: 4,
       toppings: {},
     },
