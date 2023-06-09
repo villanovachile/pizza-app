@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   size: [
     { name: "Small", value: true, id: 1 },
@@ -42,30 +41,24 @@ const initialState = {
       id: 13,
     },
   ],
-  price: [
-    {
-      toppings: '1'
+  price: {
+    toppings: 2,
+
+    size: {
+      1: 10,
+      2: 13,
+      3: 16,
     },
-    {
-      size: {
-        small: 10,
-        medium: 13,
-        large: 16
-      }
-    }
-  ],
+  },
 };
 
 const optionsSlice = createSlice({
   name: "options",
   initialState,
   reducers: {
-    updateTopping: (state, action) => {
-    },
-    updateCrust: (state, action) => {
-    },
-    updateSize: (state, action) => {
-    },
+    updateTopping: (state, action) => {},
+    updateCrust: (state, action) => {},
+    updateSize: (state, action) => {},
   },
 });
 
