@@ -7,7 +7,7 @@ const initialState = [
     pizza: {
       size: 1,
       crust: 4,
-      toppings: {},
+      toppings: {1:"whole"},
     },
   },
 ];

@@ -11,6 +11,7 @@ const OrderSummary = () => {
 
 
   const size = useSelector((state) => state.options.size);
+  const toppings = useSelector((state) => state.options.toppings);
   const sizeSelection = useSelector((state) => state.orders[0].pizza.size);
   const renderSizeSelection = size.map((item) => {
    if (item.id === sizeSelection) {
@@ -26,10 +27,30 @@ const OrderSummary = () => {
      };
    });
 
+
+  const currentToppings = () => {
+    let tempToppings = [];
+    toppings.map((topping) => {
+
+      Object.entries(currentOrder.toppings).map(([id, partition]) => {
+      
+      if (Number(id) === topping.id) {
+        tempToppings.push(`${topping.name} (${partition})`);
+      }
+      });
+    });
+
+  return tempToppings.join(", ");
+
+  };
+
+
+
   return (
   <div className="Summary">
     <div className="sizeSelction">Size: {renderSizeSelection}</div>
     <div className="crustSelection"> Crust: {renderCrustSelection}</div>
+    <div className="toppingsSelection"> Toppings: {currentToppings()}</div>
     <div className="order-summary">Order Total: ${priceTotal}</div>
   </div>
   );
