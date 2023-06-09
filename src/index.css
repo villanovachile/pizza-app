@@ -52,7 +52,7 @@ h4 {
 
 .topping-items {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .topping-name {
