@@ -41,19 +41,7 @@ const initialState = {
       name: "Olives",
       id: 13,
     },
-  ],
-  price: [
-    {
-      toppings: '1'
-    },
-    {
-      size: {
-        small: 10,
-        medium: 13,
-        large: 16
-      }
-    }
-  ],
+  ]
 };
 
 const optionsSlice = createSlice({
